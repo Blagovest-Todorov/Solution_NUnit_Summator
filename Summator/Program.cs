@@ -1,6 +1,6 @@
 ﻿namespace Summator
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -8,7 +8,11 @@
 
             if (result == 21)
             {
-                Console.WriteLine("TestPass");
+                Console.WriteLine("TestPasses");
+            }
+            else
+            {
+                Console.WriteLine("TestFails");
             }            
         }
     }
