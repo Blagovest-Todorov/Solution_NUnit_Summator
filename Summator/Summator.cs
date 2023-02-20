@@ -2,16 +2,28 @@
 {
     public static class Summator
     {
-        public static decimal Sum(params decimal[]arr) 
+        public static decimal Sum(decimal[]arr) 
         {
-            decimal sum = 0;
-
-            for (int i = 0; i < arr.Length; i++)
+            checked
             {
-                sum += arr[i];
-            }
+                // check-> checks if the current type decimal overflows, if it overflows it will cry OverflowException
+                // aritmetic exception
+                decimal sum = 0;
 
-            return sum;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    sum += arr[i];
+                }
+
+                return sum;
+            }
+        }
+
+        public static decimal Average(decimal[]arr ) 
+        {
+            decimal sum = Sum(arr);
+
+            return sum / arr.Length;
         }
     }
 }

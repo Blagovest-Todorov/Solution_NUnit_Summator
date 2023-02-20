@@ -65,5 +65,39 @@ namespace Summator.Tests
             decimal result = Summator.Sum(new decimal[] { 0, 10, -5, -20 });
             result.Should().Be(expected);
         }
+
+        [Test]
+        public void Sum_ExtremelyBigPositiveNumbers_IsSuccessful()
+        {
+            decimal expected = 3149000000;
+            decimal result = Summator.Sum(new decimal[] { 1000000000, 2149000000 });
+            result.Should().Be(expected);
+        }
+
+        [Test]
+        public void Sum_ExtremelyBigNegativeNumbers_IsSuccessful()
+        {
+            decimal expected = -3149000000;
+            decimal result = Summator.Sum(new decimal[] { -1000000000, -2149000000 });
+            result.Should().Be(expected);
+        }
+
+        [Test]
+        public void Sum_ExtremelyBigNegative_And_PositiveNumbers_IsSuccessful()
+        {
+            decimal expected = 1149000000;
+            decimal result = Summator.Sum(new decimal[] { -1000000000, 2149000000 });
+            result.Should().Be(expected);
+        }
+
+        [Test]
+        public void CheckAverage_IsSuccessful() 
+        {
+            decimal expectedAverageNum = 5.3333333333333333333333333333M;
+            var actualAverageNum = Summator.Average(new decimal[] {5, 10, 1});
+            actualAverageNum.Should().Be(expectedAverageNum);
+            actualAverageNum.Should().BeGreaterThan(decimal.MinValue);
+            actualAverageNum.Should().BeInRange(0, 100);
+        }
     }
 }
