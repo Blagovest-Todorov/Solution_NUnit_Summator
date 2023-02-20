@@ -1,8 +1,8 @@
 ﻿namespace Summator
 {
-    public static class Summator
+    public class Summator
     {
-        public static decimal Sum(decimal[]arr) 
+        public decimal Sum(decimal[]arr) 
         {
             checked
             {
@@ -21,7 +21,8 @@
 
         public static decimal Average(decimal[]arr ) 
         {
-            decimal sum = Sum(arr);
+            var summator = new Summator();
+            decimal sum = summator.Sum(arr);
 
             return sum / arr.Length;
         }
