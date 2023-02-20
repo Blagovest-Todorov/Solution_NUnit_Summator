@@ -13,7 +13,18 @@
             //else
             //{
             //    Console.WriteLine("TestFails, damn it");
-            //}            
+            //}
+            //
+            //decimal average = Summator.Average(new decimal[] {5, 10, 15});
+
+            //if (average == 10)
+            //{
+            //    Console.WriteLine("TestPasses, Hello");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("TestFails, damn it");
+            //}
         }
     }
 }
